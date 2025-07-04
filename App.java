@@ -1,16 +1,4 @@
-public class App {
-    public static void main(String[] args) {
-        Product cheese = new Product("cheese", 20, 3, true, true, 0.4);
-        Product biscuits = new Product("biscuits", 30, 3, true, true, 0.7);
-        Product tv = new Product("tv", 20000, 2, false, true, 10.0);
-        Product scratchCard = new Product("scratch Card", 100, 10, false, false, 0.0);
-        Customer customer = new Customer("alice", 1000);
-        customer.addToCart(cheese, 2);
-        customer.addToCart(biscuits, 1);
-        customer.addToCart(scratchCard, 1);
-        customer.checkout();
-    }
-}
+
 
 class Product {
     String name;
@@ -85,10 +73,6 @@ class Customer {
             System.out.println("please check your balance");
             return; 
         }
-
-   
-     
-        
         for (Cart item : cart) {
             System.out.println(item.quantity + "x " + item.product.name + "   " + (item.product.price * item.quantity));
         }
@@ -96,5 +80,18 @@ class Customer {
         System.out.println("Shipping      " + shippingFee);
         System.out.println("Amount        " + totalAmount);
        
+    }
+}
+public class App {
+    public static void main(String[] args) {
+        Product cheese = new Product("cheese", 20, 3, true, true, 0.4);
+        Product biscuits = new Product("biscuits", 30, 3, true, true, 0.7);
+        Product tv = new Product("tv", 20000, 2, false, true, 10.0);
+        Product scratchCard = new Product("scratch Card", 100, 10, false, false, 0.0);
+        Customer customer = new Customer("alice", 1000);
+        customer.addToCart(cheese, 2);
+        customer.addToCart(biscuits, 1);
+        customer.addToCart(scratchCard, 1);
+        customer.checkout();
     }
 }
